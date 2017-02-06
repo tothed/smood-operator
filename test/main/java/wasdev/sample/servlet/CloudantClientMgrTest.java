@@ -2,22 +2,17 @@ package wasdev.sample.servlet;
 
 import com.cloudant.client.api.Database;
 import com.cloudant.client.api.views.AllDocsResponse;
-import com.cloudant.http.Http;
-import com.cloudant.http.HttpConnection;
 import org.junit.Test;
-import sun.net.www.http.HttpClient;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-import java.net.URL;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  *
@@ -44,7 +39,7 @@ public class CloudantClientMgrTest {
             }
         }},new SecureRandom());
         HttpsURLConnection.setDefaultSSLSocketFactory(ssl.getSocketFactory());
-        Database client = CloudantClientMgr.getDB("sample_nosql_db");
+        Database client = CloudantClientMgr.getDB("sample_nosql_db","http://gate:8080");
         client.remove(client.find(HashMap.class,"1234"));
         final HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("_id","1234");
