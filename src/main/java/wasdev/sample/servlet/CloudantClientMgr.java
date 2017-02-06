@@ -78,11 +78,8 @@ public class CloudantClientMgr {
             System.out.println("Connecting to Cloudant : " + user);
             CloudantClient client = ClientBuilder.account(user)
                     .interceptors(new BasicAuthInterceptor(user+":"+password))
-                    .proxyURL(new URL("http://gate:8080"))
                     .build();
             return client;
-        } catch (MalformedURLException e) {
-            throw new RuntimeException("Unable to connect to repository", e);
         } catch (CouchDbException e) {
             throw new RuntimeException("Unable to connect to repository", e);
         }
