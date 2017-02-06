@@ -23,7 +23,7 @@ public class CloudantServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Database client = CloudantClientMgr.getDB("myDb");
+        Database client = CloudantClientMgr.getDB("sample_nosql_db");
         AllDocsResponse resp = client.getAllDocsRequestBuilder().includeDocs(true).build().getResponse();
         response.setContentType("text/html");
         for (Map map : resp.getDocsAs(Map.class)){
