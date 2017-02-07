@@ -40,7 +40,8 @@ public class CloudantClientMgrTest {
         }},new SecureRandom());
         HttpsURLConnection.setDefaultSSLSocketFactory(ssl.getSocketFactory());
         Database client = CloudantClientMgr.getDB("sample_nosql_db","http://gate:8080");
-        client.remove(client.find(HashMap.class,"1234"));
+        if (client.contains("1234"))
+            client.remove(client.find(HashMap.class,"1234"));
         final HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("_id","1234");
         hashMap.put("name","tada!!!!");
