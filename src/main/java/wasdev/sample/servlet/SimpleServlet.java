@@ -20,7 +20,7 @@ public class SimpleServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        response.getWriter().print("Hello World!!!" + "Do It (4) result is " + Hello.doIt(4));
+        response.getWriter().print("Hello World!" + "Do It (4) result is " + Hello.doIt(4));
     }
 
 }
