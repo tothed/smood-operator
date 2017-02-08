@@ -32,7 +32,7 @@ public class TaMoodScoreService {
             ToneAnalysis analysis = serviceResult.execute();
             return retrieve(analysis);
         } catch (Exception ex) {
-            throw new ToneAnalysisException("Failed to analyse text mood, usign Tone Analyzer",ex);
+            throw new ToneAnalysisException("Failed to analyse text mood, using Tone Analyzer",ex);
         }
     }
 
