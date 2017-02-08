@@ -1,0 +1,13 @@
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.box{
+    background-color: #00A9E0;
+    border: 1px solid gray;
+}
+.boxActive{
+    background-color: #D4E435;
+}
+.maxH{
+    height: 100%;
+}
