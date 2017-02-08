@@ -5,6 +5,7 @@
 
 <h:head>
     <h:outputStylesheet name="css/style.css"/>
+    <title>Smoody</title>
 </h:head>
 
 <h:body>
@@ -35,7 +36,7 @@
 
 
         <p:fieldset legend="Smoody" styleClass="fieldset-chat" rendered="#{indexView.step==2}">
-            <h:outputLabel value="#{indexView.question}"/>
+            <h:outputLabel value="#{indexView.question}"/><br/><br/>
             <p:commandButton value="Reset" actionListener="#{indexView.reset}" update="@form"/>
         </p:fieldset>
 
