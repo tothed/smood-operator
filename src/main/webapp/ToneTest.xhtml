@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <h:outputStylesheet name="css/style.css"/>
+    <title>Smoody</title>
+</h:head>
+
+<h:body>
+    <h:form>
+
+        <p:fieldset legend="Smoody" styleClass="fieldset-chat" rendered="#{indexView.step==1}">
+            Exception:<h:outputLabel value="#{toneView.excpetions}"/>
+            Joy:<h:outputLabel value="#{toneView.joy}"/>
+            <p:inputText value="#{toneView.text}"/>
+            <br/><br/>
+            <p:commandButton value="Process" actionListener="#{toneView.analyze}" update="@form"/>
+        </p:fieldset>
+
+    </h:form>
+
+</h:body>
+</html>
