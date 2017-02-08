@@ -3,4 +3,4 @@ applications:
 - name: sample-java-helloworld
   random-route: true
   memory: 512M
-  path: target/JavaHelloWorldApp.war
+  path: target/Smood-operator.war
