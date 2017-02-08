@@ -31,6 +31,7 @@ public class CloudantServlet extends HttpServlet {
         response.setContentType("text/html");
         try {
             response.getWriter().print(db.getConnection().getMetaData().getDatabaseProductName());
+            response.getWriter().print(db.getConnection().getMetaData().getDatabaseProductVersion());
         } catch (SQLException e) {
             e.printStackTrace();
         }
