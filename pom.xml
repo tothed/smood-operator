@@ -64,6 +64,11 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
         </dependency>
+        <dependency>
+            <groupId>com.ibm.watson.developer_cloud</groupId>
+            <artifactId>tone-analyzer</artifactId>
+            <version>3.5.3</version>
+        </dependency>
     </dependencies>
 
     <build>
