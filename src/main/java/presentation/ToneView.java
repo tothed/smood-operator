@@ -1,11 +1,17 @@
 package presentation;
 
+import api.MoodScore;
+import api.MoodType;
 import api.TaMoodScoreService;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.EnumSet;
+import java.util.List;
 
 /**
  * Created by S2QAH9 on 8. 2. 2017.
@@ -50,7 +56,12 @@ public class ToneView implements Serializable{
 public void analyze (){
     TaMoodScoreService service =new TaMoodScoreService();
     try {
-       joy =  service.analyze(text);
+        List<MoodScore> result = service.analyze(text, EnumSet.of(MoodType.JOY));
+       joy = Iterables.find(result, new Predicate<MoodScore>() {
+           public boolean apply(MoodScore input) {
+               return input.getMoodType() == MoodType.JOY;
+           }
+       }).getScore();
     } catch (Exception ex){
         ex.printStackTrace();
         excpetions = ex.getMessage();
