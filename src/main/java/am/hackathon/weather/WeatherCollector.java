@@ -8,7 +8,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import wasdev.sample.servlet.CloudantClientMgr;
 
-import javax.ejb.Schedule;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
@@ -27,7 +26,7 @@ public class WeatherCollector {
             new Location("New York", "40.758959/-73.973670"),
             new Location("Hong Kong", "22.280202/114.173618")};
 
-    @Schedule(dayOfMonth = "*/2", hour = "19", minute = "30")
+//    @Schedule(dayOfMonth = "*/2", hour = "19", minute = "30")
     public void collect() {
         try {
             collect(null);
