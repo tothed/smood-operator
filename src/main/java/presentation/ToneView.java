@@ -52,6 +52,7 @@ public void analyze (){
     try {
        joy =  service.analyze(text);
     } catch (Exception ex){
+        ex.printStackTrace();
         excpetions = ex.getMessage();
     }
 }

@@ -35,6 +35,7 @@ public class Dao {
 
     public Dao(Function1<String> proxy) {
         this.db = CloudantClientMgr.getDB(proxy);
+
     }
 
     public List<Event> listEvents() {
