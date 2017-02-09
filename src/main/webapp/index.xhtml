@@ -15,7 +15,7 @@
             <div class="slider">
                 <br/><br/><br/><br/><br/><br/>
                 <h:inputHidden id="inputValue"/>
-                <p:slider for="inputValue" step="1" minValue="1" maxValue="3"/>
+                <p:slider for="inputValue" step="1" minValue="1" maxValue="5"/>
                 <br/><br/><br/><br/><br/>
             </div>
 
@@ -28,16 +28,19 @@
                 <br/><br/>
                 <f:selectItem itemLabel="Meeting" itemValue="Meeting" />
                 <f:selectItem itemLabel="Training" itemValue="Training" />
-                <f:selectItem itemLabel="Other" itemValue="Other" />
+                <f:selectItem itemLabel="Hackathon" itemValue="Hackathon" />
+                <br/>
+                <f:selectItem itemLabel="Something" itemValue="Something" />
             </p:selectManyButton>
             <br/><br/>
-            <p:commandButton value="Process" actionListener="#{indexView.save(1)}" update="@form"/>
+            <p:commandButton value="Capture" actionListener="#{indexView.save(1)}" update="@form"/>
         </p:fieldset>
 
 
         <p:fieldset legend="Smoody" styleClass="fieldset-chat" rendered="#{indexView.step==2}">
             <h:outputLabel value="#{indexView.question}"/><br/><br/>
-            <p:commandButton value="Reset" actionListener="#{indexView.reset}" update="@form"/>
+            <p:commandLink value="How do I know?" action="/personalDashboard.xhtml" ajax="false"/><br/>
+            <p:commandLink value="Reset" actionListener="#{indexView.reset}" update="@form"/>
         </p:fieldset>
 
     </h:form>

@@ -1,0 +1,358 @@
+{
+  "name": "mood",
+  "children": [
+    {
+      "name": "sadness",
+      "children": [
+        {
+          "name": "TeamBuilding",
+          "children": [
+            {
+              "name": "AM IT",
+              "children": [
+                {
+                  "name": "",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "L&H IT",
+              "children": [
+                {
+                  "name": "",
+                  "size": 100
+                }
+              ]
+            },
+            {
+              "name": "RM IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TownHall",
+          "children": [
+            {
+              "name": "AM IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "L&H IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "RM IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Xmas party",
+          "children": [
+            {
+              "name": "AM IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "L&H IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "RM IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "joy",
+      "children": [
+        {
+          "name": "Hackaton",
+          "children": [
+            {
+              "name": "AM IT",
+              "children": [
+                {
+                  "name": "Presentation",
+                  "size": 30
+                }
+                ,{
+                  "name": "Beer",
+                  "size": 30
+                },
+                {
+                  "name": "Lunch",
+                  "size": 20
+                },
+                {
+                  "name": "Team",
+                  "size": 40
+                }
+              ,
+                {
+                  "name": "Inovation",
+                  "size": 50
+                }
+              ,
+                {
+                  "name": "Technology",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "L&H IT",
+              "children": [
+                {
+                  "name": "Technology",
+                  "size": 10
+                },
+                {
+                  "name": "Friends",
+                  "size": 40
+                },
+                {
+                  "name": "Inovations",
+                  "size": 50
+                }
+              ]
+            },
+            {
+              "name": "RM IT",
+              "children": [
+                {
+                  "name": "Presentation",
+                  "size": 30
+                }
+              ,{
+                  "name": "Beer",
+                  "size": 30
+                },
+                {
+                  "name": "Watson",
+                  "size": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TownHall",
+          "children": [
+            {
+              "name": "AM IT",
+              "children": [
+                {
+                  "name": "News",
+                  "size": 100
+                }
+              ]
+            },
+            {
+              "name": "L&H IT",
+              "children": [
+                {
+                  "name": "Grow",
+                  "size": 50
+                },
+                {
+                  "name": "Projects",
+                  "size": 20
+                }
+              ]
+            },
+            {
+              "name": "RM IT",
+              "children": [
+                {
+                  "name": "Weather",
+                  "size": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Xmas party",
+          "children": [
+            {
+              "name": "AM IT",
+              "children": [
+                {
+                  "name": "Friends",
+                  "size": 40
+                },
+                {
+                  "name": "Food",
+                  "size": 20
+                }
+              ]
+            },
+            {
+              "name": "L&H IT",
+              "children": [
+                {
+                  "name": "Party",
+                  "size": 100
+                },
+                {
+                  "name": "Place",
+                  "size": 100
+                }
+              ]
+            },
+            {
+              "name": "RM IT",
+              "children": [
+                {
+                  "name": "Place",
+                  "size": 100
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "defense",
+      "children": [
+        {
+          "name": "Training",
+          "children": [
+            {
+              "name": "AM IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "L&H IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "RM IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TownHall",
+          "children": [
+            {
+              "name": "AM IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "L&H IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "RM IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Year end",
+          "children": [
+            {
+              "name": "AM IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "L&H IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            },
+            {
+              "name": "RM IT",
+              "children": [
+                {
+                  "name": "success",
+                  "size": 10
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

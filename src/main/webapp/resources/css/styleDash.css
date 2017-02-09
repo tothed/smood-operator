@@ -1,6 +1,325 @@
 body{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
+.maxH{
+    height: 100%;
+}
+.logo{
+    width: 250px;
+    height: 70px;
+    background-color: white;
+    background-image: url("#{resource['images/final_smoody-01-01.png']}");
+    background-size: 100% 100%;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+ul
+{
+    margin:0px;
+    padding:0px;
+    list-style-type:none;
+    -webkit-backface-visibility: hidden; backface-visibility: hidden;
+}
+.var_nav
+{
+    position:relative;
+    background:#ccc;
+    width:200px;
+    height:50px;
+    margin-bottom:5px;
+}
+.link_bg
+{
+    width:50px;
+    height:50px;
+    position:absolute;
+    background:#2C4F9E;
+    color:#fff;
+    z-index:2;
+}
+.link_bg i
+{
+    position:relative;
+}
+.link_title
+{
+    position:absolute;
+    width:100%;
+    z-index:3;
+    color:#fff;
+}
+.link_title:hover .icon
+{
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+.var_nav:hover .link_bg
+{
+    width:100%;
+    background:#2C4F9E;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.var_nav:hover a
+{
+    font-weight:bold;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    -ms-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+.icon
+{
+    position:relative;
+    width:50px;
+    height:50px;
+    text-align:center;
+    color:#fff;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    -ms-transition:all .5s ease-in-out;
+    float:left;
+    transition:all .5s ease-in-out;
+    float:left;
+}
+.icon i{top:22px;position:relative;}
+.link_title a{
+    display:block;
+    position:absolute;
+    float:left;
+    font-family:arial;
+    color:#fff;
+    text-decoration:none;
+    width:100%;
+    height:50px;
+    text-align:right;
+    padding-left: 5px;
+}
+.link_title a span
+{
+    margin-top: 15px;
+    display: block;
+    margin-right: 10px;
+}
+#htmltagcloud {
+    /******************************************
+     * CUSTOMIZE CLOUD CSS BELOW (optional)
+     */
+    font-size: 100%;
+    width: auto; /* auto or fixed width, e.g. 500px   */
+    font-family: 'lucida grande', 'trebuchet ms', arial, helvetica, sans-serif;
+    background-color: #fff;
+    margin: 1em 1em 0 1em;
+    border: 2px dotted #ddd;
+    padding: 2em;
+    /******************************************
+     * END CUSTOMIZE
+     */
+
+}
+
+#htmltagcloud {
+    line-height: 2.4em;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    text-align: justify;
+    text-indent: 0
+}
+
+#htmltagcloud a:link {
+    text-decoration: none
+}
+
+#htmltagcloud a:visited {
+    text-decoration: none
+}
+
+#htmltagcloud a:hover {
+    color: white;
+    background-color: #05f
+}
+
+#htmltagcloud a:active {
+    color: white;
+    background-color: #03d
+}
+
+.wrd {
+    padding: 0;
+    position: relative
+}
+
+.wrd a {
+    text-decoration: none
+}
+
+.tagcloud0 {
+    font-size: 1.0em;
+    color: #93b75f;
+    z-index: 10
+}
+
+.tagcloud0 a {
+    color: #E7E658
+}
+
+.tagcloud1 {
+    font-size: 1.4em;
+    color: #E7E658;
+    z-index: 9
+}
+
+.tagcloud1 a {
+    color: #93b75f
+}
+
+.tagcloud2 {
+    font-size: 1.8em;
+    color: #93b75f;
+    z-index: 8
+}
+
+.tagcloud2 a {
+    color: #E7E658
+}
+
+.tagcloud3 {
+    font-size: 2.2em;
+    color: #E7E658;
+    z-index: 7
+}
+
+.tagcloud3 a {
+    color: #cc6666
+}
+
+.tagcloud4 {
+    font-size: 2.6em;
+    color: #cc6666;
+    z-index: 6
+}
+
+.tagcloud4 a {
+    color: #E7E658
+}
+
+.tagcloud5 {
+    font-size: 3.0em;
+    color: #E7E658;
+    z-index: 5
+}
+
+.tagcloud5 a {
+    color: #cc6666
+}
+
+.tagcloud6 {
+    font-size: 3.3em;
+    color: #cc6666;
+    z-index: 4
+}
+
+.tagcloud6 a {
+    color: #93b75f
+}
+
+.tagcloud7 {
+    font-size: 3.6em;
+    color: #93b75f;
+    z-index: 3
+}
+
+.tagcloud7 a {
+    color: #93b75f
+}
+
+.tagcloud8 {
+    font-size: 3.9em;
+    color: #93b75f;
+    z-index: 2
+}
+
+.tagcloud8 a {
+    color: #93b75f
+}
+
+.tagcloud9 {
+    font-size: 4.2em;
+    color: #93b75f;
+    z-index: 1
+}
+
+.tagcloud9 a {
+    color: #cc6666
+}
+
+.tagcloud10 {
+    font-size: 4.5em;
+    color: #cc6666;
+    z-index: 0
+}
+
+.tagcloud10 a {
+    color: #cc6666
+}
+
+.freq {
+    font-size: 10pt !important;
+    color: #bbb
+}
+
+#credit {
+    text-align: center;
+    color: #333;
+    margin-bottom: 0.6em;
+    font: 0.7em 'lucida grande', trebuchet, 'trebuchet ms', verdana, arial, helvetica, sans-serif
+}
+
+#credit a:link {
+    color: #777;
+    text-decoration: none
+}
+
+#credit a:visited {
+    color: #777;
+    text-decoration: none
+}
+
+#credit a:hover {
+    color: white;
+    background-color: #05f;
+}
+
+#credit a:active {
+    text-decoration: underline
+}
+circle,
+path {
+    cursor: pointer;
+}
+
+.circle text {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+circle {
+    fill: none;
+    pointer-events: all;
+}
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 .box{
     background-color: #00A9E0;
     border: 1px solid gray;
@@ -11,3 +330,212 @@ body{
 .maxH{
     height: 100%;
 }
+
+#htmltagcloud {
+    /******************************************
+     * CUSTOMIZE CLOUD CSS BELOW (optional)
+     */
+    font-size: 100%;
+    width: auto; /* auto or fixed width, e.g. 500px   */
+    font-family: 'lucida grande', 'trebuchet ms', arial, helvetica, sans-serif;
+    background-color: #fff;
+    margin: 1em 1em 0 1em;
+    border: 2px dotted #ddd;
+    padding: 2em;
+    /******************************************
+     * END CUSTOMIZE
+     */
+
+}
+
+#htmltagcloud {
+    line-height: 2.4em;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    text-align: justify;
+    text-indent: 0
+}
+
+#htmltagcloud a:link {
+    text-decoration: none
+}
+
+#htmltagcloud a:visited {
+    text-decoration: none
+}
+
+#htmltagcloud a:hover {
+    color: white;
+    background-color: #05f
+}
+
+#htmltagcloud a:active {
+    color: white;
+    background-color: #03d
+}
+
+.wrd {
+    padding: 0;
+    position: relative
+}
+
+.wrd a {
+    text-decoration: none
+}
+
+.tagcloud0 {
+    font-size: 1.0em;
+    color: #93b75f;
+    z-index: 10
+}
+
+.tagcloud0 a {
+    color: #E7E658
+}
+
+.tagcloud1 {
+    font-size: 1.4em;
+    color: #E7E658;
+    z-index: 9
+}
+
+.tagcloud1 a {
+    color: #93b75f
+}
+
+.tagcloud2 {
+    font-size: 1.8em;
+    color: #93b75f;
+    z-index: 8
+}
+
+.tagcloud2 a {
+    color: #E7E658
+}
+
+.tagcloud3 {
+    font-size: 2.2em;
+    color: #E7E658;
+    z-index: 7
+}
+
+.tagcloud3 a {
+    color: #cc6666
+}
+
+.tagcloud4 {
+    font-size: 2.6em;
+    color: #cc6666;
+    z-index: 6
+}
+
+.tagcloud4 a {
+    color: #E7E658
+}
+
+.tagcloud5 {
+    font-size: 3.0em;
+    color: #E7E658;
+    z-index: 5
+}
+
+.tagcloud5 a {
+    color: #cc6666
+}
+
+.tagcloud6 {
+    font-size: 3.3em;
+    color: #cc6666;
+    z-index: 4
+}
+
+.tagcloud6 a {
+    color: #93b75f
+}
+
+.tagcloud7 {
+    font-size: 3.6em;
+    color: #93b75f;
+    z-index: 3
+}
+
+.tagcloud7 a {
+    color: #93b75f
+}
+
+.tagcloud8 {
+    font-size: 3.9em;
+    color: #93b75f;
+    z-index: 2
+}
+
+.tagcloud8 a {
+    color: #93b75f
+}
+
+.tagcloud9 {
+    font-size: 4.2em;
+    color: #93b75f;
+    z-index: 1
+}
+
+.tagcloud9 a {
+    color: #cc6666
+}
+
+.tagcloud10 {
+    font-size: 4.5em;
+    color: #cc6666;
+    z-index: 0
+}
+
+.tagcloud10 a {
+    color: #cc6666
+}
+
+.freq {
+    font-size: 10pt !important;
+    color: #bbb
+}
+
+#credit {
+    text-align: center;
+    color: #333;
+    margin-bottom: 0.6em;
+    font: 0.7em 'lucida grande', trebuchet, 'trebuchet ms', verdana, arial, helvetica, sans-serif
+}
+
+#credit a:link {
+    color: #777;
+    text-decoration: none
+}
+
+#credit a:visited {
+    color: #777;
+    text-decoration: none
+}
+
+#credit a:hover {
+    color: white;
+    background-color: #05f;
+}
+
+#credit a:active {
+    text-decoration: underline
+}
+circle,
+path {
+    cursor: pointer;
+}
+
+.circle text {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+circle {
+    fill: none;
+    pointer-events: all;
+}
+

@@ -4,6 +4,9 @@
 
 <h:head>
     <h:outputStylesheet name="css/styleDash.css"/>
+    <h:outputScript name="d3.js"/>
+    <h:outputScript name="d3tip.js"/>
+    <h:outputScript name="jcloud.js"/>
     <title>Smoody - Personal Dashboard</title>
 </h:head>
 
@@ -11,22 +14,94 @@
     <div class="ui-g">
         <div class="ui-g-12 ui-md-2">
             <div class="ui-g maxH">
-                <div class="ui-g-12 box">Swiss Re</div>
-                <div class="ui-g-12 box">Location</div>
-                <div class="ui-g-12 box">Department</div>
-                <div class="ui-g-12 box">Team</div>
-                <div class="ui-g-12 box boxActive">Personal</div>
+                <div class="ui-g-12">
+                    <div class="logo"/>
+                    <nav>
+                        <UL>
+                            <li class="var_nav">
+                                <div class="link_bg"></div>
+                                <div class="link_title">
+                                    <div class="icon">
+                                        <i class="icon-mobile-phone icon-2x"></i>
+                                    </div>
+                                    <a href="personalDashboard.xhtml"><span>Dashboard</span></a>
+                                </div>
+                            </li>
+                            <li class="var_nav">
+                                <div class="link_bg"></div>
+                                <div class="link_title">
+                                    <div class="icon">
+                                        <i class="icon-lightbulb icon-2x"></i>
+                                    </div>
+                                    <a href="#"><span>Suggestions</span></a>
+                                </div>
+                            </li>
+                            <li class="var_nav">
+                                <div class="link_bg"></div>
+                                <div class="link_title">
+                                    <div class="icon">
+                                        <i class="icon-wrench icon-2x"></i>
+                                    </div>
+                                    <a href="#"><span>History</span></a>
+                                </div>
+                            </li>
+                            <li class="var_nav">
+                                <div class="link_bg"></div>
+                                <div class="link_title">
+                                    <div class="icon">
+                                        <i class="icon-briefcase icon-2x"></i>
+                                    </div>
+                                    <a href="future.xhtml"><span>Smoody Future</span></a>
+                                </div>
+                            </li>
+                        </UL>
+                    </nav>
+                </div>
             </div>
         </div>
         <div class="ui-g-12 ui-md-10 ui-g-nopad">
             <div class="ui-g-12 ui-g-nopad">
                 <div class="ui-g">
-                    <div class="ui-g-12 ui-md-4"><p:messages /><p:chart type="metergauge" model="#{personalChartView.meterGaugeModel}" style="height:250px;" responsive="true" /></div>
-                    <div class="ui-g-12 ui-md-4"><p:chart type="line" model="#{personalChartView.dateModel}" style="height:250px;" responsive="true" /></div>
-                    <div class="ui-g-12 ui-md-4">Proin efficitur in leo eget ornare. Nam vestibulum neque sed velit sagittis sodales. Sed scelerisque hendrerit magna a hendrerit. Cras tempor sem at justo pharetra convallis. Curabitur vel sodales purus. Vestibulum interdum facilisis nulla imperdiet suscipit. Quisque lectus felis, condimentum eget hendrerit sit amet.</div>
+                    <div class="ui-g-12 ui-md-6"><p:messages/>
+                        <div class="d3js"></div>
+                        <h:outputScript name="piechart.js"/>
+
+                    </div>
+                    <div class="ui-g-12 ui-md-6">
+                        <div id="htmltagcloud"><span class="wrd tagcloud7" id="0"><a href="#tagcloud">Autonomy  <span
+                                class="freq">(100)</span></a></span> <span class="wrd tagcloud4" id="1"><a
+                                href="#tagcloud">CareerDevelopment  <span class="freq">(89)</span></a></span> <span
+                                class="wrd tagcloud5" id="2"><a href="#tagcloud">Collaboration  <span
+                                class="freq">(92)</span></a></span> <span class="wrd tagcloud1" id="3"><a
+                                href="#tagcloud">Communication  <span class="freq">(81)</span></a></span> <span
+                                class="wrd tagcloud8" id="4"><a href="#tagcloud">Empowerment  <span
+                                class="freq">(105)</span></a></span> <span class="wrd tagcloud7" id="5"><a
+                                href="#tagcloud">Hackathon  <span class="freq">(100)</span></a></span> <span
+                                class="wrd tagcloud2" id="6"><a href="#tagcloud">Manager  <span class="freq">(83)</span></a></span>
+                            <span class="wrd tagcloud6" id="7"><a href="#tagcloud">Meeting  <span
+                                    class="freq">(96)</span></a></span> <span class="wrd tagcloud6" id="8"><a
+                                    href="#tagcloud">Recognition  <span class="freq">(95)</span></a></span> <span
+                                    class="wrd tagcloud0" id="9"><a href="#tagcloud">SeniorManagement  <span
+                                    class="freq">(76)</span></a></span> <span class="wrd tagcloud4" id="10"><a
+                                    href="#tagcloud">Training  <span class="freq">(89)</span></a></span> <span
+                                    class="wrd tagcloud10" id="11"><a href="#tagcloud">Workload  <span
+                                    class="freq">(109)</span></a></span></div>
+                        <!-- end tag cloud : generated by TagCrowd.com : please keep this notice -->
+
+
+                    </div>
+
+            </div>
+
+            <div class="ui-g">
+                <div class="ui-g-2">
+                    <br/>
+                    <h:graphicImage library="images" name="scale2-01.png" width="200" height="200"/>
                 </div>
+                <div class="ui-g-10"><p:chart type="line" model="#{personalChartView.dateModel}" responsive="true"/></div>
             </div>
         </div>
     </div>
+</div>
 </h:body>
-</html>
+        </html>

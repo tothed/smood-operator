@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <h:outputStylesheet name="css/styleDash.css"/>
+    <title>Smoody - Team Dashboard</title>
+</h:head>
+
+<h:body>
+    <p:messages/>
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-2">
+            <div class="ui-g maxH">
+                <div class="ui-g-12">
+                    <div class="logo"/>
+                    <nav>
+                        <UL>
+                            <li class="var_nav">
+                                <div class="link_bg"></div>
+                                <div class="link_title">
+                                    <div class="icon">
+                                        <i class="icon-mobile-phone icon-2x"></i>
+                                    </div>
+                                    <a href="personalDashboard.xhtml"><span>Dashboard</span></a>
+                                </div>
+                            </li>
+                            <li class="var_nav">
+                                <div class="link_bg"></div>
+                                <div class="link_title">
+                                    <div class="icon">
+                                        <i class="icon-lightbulb icon-2x"></i>
+                                    </div>
+                                    <a href="#"><span>Suggestions</span></a>
+                                </div>
+                            </li>
+                            <li class="var_nav">
+                                <div class="link_bg"></div>
+                                <div class="link_title">
+                                    <div class="icon">
+                                        <i class="icon-wrench icon-2x"></i>
+                                    </div>
+                                    <a href="#"><span>History</span></a>
+                                </div>
+                            </li>
+                            <li class="var_nav">
+                                <div class="link_bg"></div>
+                                <div class="link_title">
+                                    <div class="icon">
+                                        <i class="icon-briefcase icon-2x"></i>
+                                    </div>
+                                    <a href="future.xhtml"><span>Smoody Future</span></a>
+                                </div>
+                            </li>
+                        </UL>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-10 ui-g-nopad">
+            <div class="ui-g-12 ui-g-nopad">
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <img src="#{resource['images/final_slide.jpg']}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>
