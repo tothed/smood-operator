@@ -70,17 +70,6 @@
             <version>2.10.3</version>
         </dependency>
         <dependency>
-            <groupId>com.ibm.watson.developer_cloud</groupId>
-            <artifactId>tone-analyzer</artifactId>
-            <version>3.5.3</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.squareup.okhttp3</groupId>
-                    <artifactId>okhttp-urlconnection</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>19.0</version>
@@ -114,6 +103,13 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>com.ibm.watson.developer_cloud</groupId>
+                    <artifactId>tone-analyzer</artifactId>
+                    <version>3.5.3</version>
+                </dependency>
+            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -151,6 +147,21 @@
         </profile>
         <profile>
             <id>ed</id>
+
+            <dependencies>
+
+                <dependency>
+                    <groupId>com.ibm.watson.developer_cloud</groupId>
+                    <artifactId>tone-analyzer</artifactId>
+                    <version>3.5.3</version>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>com.squareup.okhttp3</groupId>
+                            <artifactId>okhttp-urlconnection</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -171,6 +182,20 @@
         </profile>
         <profile>
             <id>jozef</id>
+            <dependencies>
+
+                <dependency>
+                    <groupId>com.ibm.watson.developer_cloud</groupId>
+                    <artifactId>tone-analyzer</artifactId>
+                    <version>3.5.3</version>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>com.squareup.okhttp3</groupId>
+                            <artifactId>okhttp-urlconnection</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -191,6 +216,21 @@
         </profile>
         <profile>
             <id>philipp</id>
+
+            <dependencies>
+
+                <dependency>
+                    <groupId>com.ibm.watson.developer_cloud</groupId>
+                    <artifactId>tone-analyzer</artifactId>
+                    <version>3.5.3</version>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>com.squareup.okhttp3</groupId>
+                            <artifactId>okhttp-urlconnection</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+            </dependencies>
             <build>
                 <plugins>
                     <plugin>
