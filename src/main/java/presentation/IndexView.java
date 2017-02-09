@@ -16,7 +16,7 @@ public class IndexView implements Serializable{
 
     @PostConstruct
     private void init(){
-        question = "Hi Peter! How is your mood today?";
+        question = "Hi Frank! How is your mood today?";
         step=0;
         selectedDomains= new ArrayList<>();
     }
