@@ -25,13 +25,6 @@ public class TaMoodScoreService {
         public String apply(ToneScore input) { return input.getId(); }
     };
 
-    public TaMoodScoreService() {
-    }
-
-//    @PostConstruct
-//    public void init() {
-//        toneAnalyzer.setUsernameAndPassword("facd674e-0350-40db-8472-dae5cbb9c6da", "4Ggt6ZJORvPj");
-//    }
 
     public long analyze(String text) throws ToneAnalysisException {
         try {
@@ -53,20 +46,36 @@ public class TaMoodScoreService {
      */
     private long retrieve(ToneAnalysis analysis) {
         List<ToneCategory> tones = analysis.getDocumentTone().getTones();
-        ToneCategory emotionCat =  Iterables.find(tones, compose(equalTo("emotion_tone"),GET_TONE_CAT_ID));
-        if (emotionCat == null)
-            throw new ToneAnalysisException("Cannot find 'emotion_tone' category in the analysis. Available categories are: " + Iterables.transform(tones, GET_TONE_CAT_ID));
+        ToneScore joyScore =  extractScore(tones,"emotion_tone","joy");
+        ToneScore agreeabilityScore =  extractScore(tones,"social_tone","agreeableness_big5");
 
-        ToneScore joyScore =  Iterables.find(emotionCat.getTones(), compose(equalTo("joy"),GET_TONE_SCORE_ID));
-        if (joyScore == null)
-            throw new ToneAnalysisException("Cannot find 'joy' score in the 'emotion_tone' category. Available scores are: " + Iterables.transform(emotionCat.getTones(), GET_TONE_SCORE_ID));
-
-        return normalizeScore(joyScore.getScore());
+        long scaled = rescale(joyScore.getScore());
+        return adjust(scaled,agreeabilityScore.getScore());
     }
 
-    private long normalizeScore(Double score) {
+    private ToneScore extractScore(List<ToneCategory> tones, String categoryType, String scoreType) {
+        ToneCategory category =  Iterables.find(tones, compose(equalTo(/*"social_tone"*/categoryType),GET_TONE_CAT_ID));
+        if (category == null)
+            throw new ToneAnalysisException("Cannot find '"+categoryType+"' category in the analysis. Available categories are: " + Iterables.transform(tones, GET_TONE_CAT_ID));
+
+        ToneScore score =  Iterables.find(category.getTones(), compose(equalTo(/*"agreeableness_big5"*/scoreType),GET_TONE_SCORE_ID));
+        if (score == null)
+            throw new ToneAnalysisException("Cannot find '"+scoreType+"' score in the 'emotion_tone' category. Available scores are: " + Iterables.transform(category.getTones(), GET_TONE_SCORE_ID));
+        return score;
+    }
+
+    /***
+     * Rescales from <0,1> to scale of <-100, 1000>
+     * @param score
+     * @return
+     */
+    private long rescale(Double score) {
         if (score == null)
             throw new ToneAnalysisException("The joy score returned from the Tone Analyzer is NULL");
         return ((long) (score * 200)) - 100;
+    }
+
+    private long adjust(long score, double reliability) {
+        return (long) (score * reliability);
     }
 }
