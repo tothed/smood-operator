@@ -10,6 +10,18 @@ body,html {
 	color: #ffffff;
 }
 
+.ui-fieldset .ui-fieldset-legend{
+    background-image: url("#{resource['images/logo1-01.png']}");
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    padding-left: 50px !important;
+    background-position: left 10px center;
+}
+
+.ui-fieldset-legend .ui-corner-all .ui-state-default{
+    padding-left: 50px !important;
+}
+
 body {
 	background-image: url("#{resource['images/ep_bg.png']}");
 	background-size:     cover;
