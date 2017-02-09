@@ -73,6 +73,12 @@
             <groupId>com.ibm.watson.developer_cloud</groupId>
             <artifactId>tone-analyzer</artifactId>
             <version>3.5.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.squareup.okhttp3</groupId>
+                    <artifactId>okhttp-urlconnection</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
