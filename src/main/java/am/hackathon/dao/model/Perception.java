@@ -1,11 +1,21 @@
 package am.hackathon.dao.model;
 
+import com.google.common.base.Function;
+
 import java.util.Date;
 
 /**
  *
  */
 public class Perception {
+
+    public static final Function<Perception,Date> GET_DATE = new Function<Perception, Date>() {
+        @Override
+        public Date apply(Perception input) {
+            return input.date;
+        }
+    };
+
     private String id;
     private Date date;
     private String username;

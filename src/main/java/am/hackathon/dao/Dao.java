@@ -8,6 +8,10 @@ import com.cloudant.client.api.Database;
 import com.cloudant.client.api.views.Key;
 import com.cloudant.client.api.views.UnpaginatedRequestBuilder;
 import com.cloudant.client.api.views.ViewResponse;
+import com.google.common.base.Function;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import wasdev.sample.servlet.CloudantClientMgr;
 
 import java.text.ParseException;
@@ -75,18 +79,43 @@ public class Dao {
             throw new RuntimeException(e);
         }
     }
-
-    public List<Perception> listPerceptions(String user) {
+    public List<Perception> listPerceptions(final String user) {
         UnpaginatedRequestBuilder<String, Map> res = db.getViewRequestBuilder("perceptions", "perception").newRequest(Key.Type.STRING, Map.class);
         try {
             ViewResponse<String, Map> response = res.includeDocs(true).build().getResponse();
-            List<Perception> forecasts = new ArrayList<>();
-            for (Map<String, Object> map : response.getValues()) {
-                    final Perception perception = toPerception(map);
-                    if (perception.getUsername().equals(user))
-                        forecasts.add(perception);
-            }
-            return forecasts;
+            return Lists.newArrayList(Iterables.filter(Iterables.transform(response.getValues(), new Function<Map, Perception>() {
+                @Override
+                public Perception apply(Map input) {
+                    try {
+                        return toPerception(input);
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }), new Predicate<Perception>() {
+                @Override
+                public boolean apply(Perception input) {
+                    return input.getUsername().equals(user);
+                }
+            }));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public List<Perception> listPerceptions() {
+        UnpaginatedRequestBuilder<String, Map> res = db.getViewRequestBuilder("perceptions", "perception").newRequest(Key.Type.STRING, Map.class);
+        try {
+            ViewResponse<String, Map> response = res.includeDocs(true).build().getResponse();
+            return Lists.newArrayList(Iterables.transform(response.getValues(), new Function<Map, Perception>() {
+                @Override
+                public Perception apply(Map input) {
+                    try {
+                        return toPerception(input);
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

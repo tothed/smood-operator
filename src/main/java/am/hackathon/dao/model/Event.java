@@ -1,11 +1,20 @@
 package am.hackathon.dao.model;
 
+import com.google.common.base.Function;
+
 import java.util.Date;
 
 /**
  *
  */
 public class Event {
+
+    public static final Function<Event,Date> GET_DATE = new Function<Event, Date>() {
+        @Override
+        public Date apply(Event input) {
+            return input.date;
+        }
+    };
     private String id;
     private Date date;
     private String nameEvent;

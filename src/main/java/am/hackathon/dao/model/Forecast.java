@@ -1,11 +1,21 @@
 package am.hackathon.dao.model;
 
+import com.google.common.base.Function;
+
 import java.util.Date;
 
 /**
  *
  */
 public class Forecast {
+
+    public static final Function<Forecast,Date> GET_DATE = new Function<Forecast, Date>() {
+        @Override
+        public Date apply(Forecast input) {
+            return input.date;
+        }
+    };
+
     private String id;
     private Date date;
     private double feels_like;

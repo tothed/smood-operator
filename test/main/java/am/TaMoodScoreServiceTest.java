@@ -1,5 +1,6 @@
-package api;
+package am;
 
+import api.TaMoodScoreService;
 import junit.framework.TestCase;
 
 public class TaMoodScoreServiceTest extends TestCase {
