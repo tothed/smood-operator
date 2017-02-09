@@ -31,7 +31,7 @@ public class TaMoodScoreService {
             toneAnalyzer.setUsernameAndPassword("facd674e-0350-40db-8472-dae5cbb9c6da", "4Ggt6ZJORvPj");
             ServiceCall<ToneAnalysis> serviceResult = toneAnalyzer.getTone(text, emotionOption);
             ToneAnalysis analysis = serviceResult.execute();
-            return retrieve(analysis);
+            return retrieve(analysis.getDocumentTone().getTones());
         } catch (ToneAnalysisException tex) {
             throw tex;
         } catch(Exception ex) {
@@ -41,11 +41,11 @@ public class TaMoodScoreService {
 
     /***
      * Retrieves the score we want (the joy score) from the analysis
-     * @param analysis
      * @return
+     * @param toneCategories
      */
-    private long retrieve(ToneAnalysis analysis) {
-        List<ToneCategory> tones = analysis.getDocumentTone().getTones();
+    long retrieve(List<ToneCategory> toneCategories) {
+        List<ToneCategory> tones = toneCategories;
         ToneScore joyScore =  extractScore(tones,"emotion_tone","joy");
         ToneScore agreeabilityScore =  extractScore(tones,"social_tone","agreeableness_big5");
 
@@ -54,11 +54,11 @@ public class TaMoodScoreService {
     }
 
     private ToneScore extractScore(List<ToneCategory> tones, String categoryType, String scoreType) {
-        ToneCategory category =  Iterables.find(tones, compose(equalTo(/*"social_tone"*/categoryType),GET_TONE_CAT_ID));
+        ToneCategory category =  Iterables.find(tones, compose(equalTo(categoryType),GET_TONE_CAT_ID));
         if (category == null)
             throw new ToneAnalysisException("Cannot find '"+categoryType+"' category in the analysis. Available categories are: " + Iterables.transform(tones, GET_TONE_CAT_ID));
 
-        ToneScore score =  Iterables.find(category.getTones(), compose(equalTo(/*"agreeableness_big5"*/scoreType),GET_TONE_SCORE_ID));
+        ToneScore score =  Iterables.find(category.getTones(), compose(equalTo(scoreType),GET_TONE_SCORE_ID));
         if (score == null)
             throw new ToneAnalysisException("Cannot find '"+scoreType+"' score in the 'emotion_tone' category. Available scores are: " + Iterables.transform(category.getTones(), GET_TONE_SCORE_ID));
         return score;
