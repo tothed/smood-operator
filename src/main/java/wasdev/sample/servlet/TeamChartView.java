@@ -1,14 +1,20 @@
 package wasdev.sample.servlet;
 
+import am.Constant;
+import am.hackathon.dao.AsSeries;
+import am.hackathon.dao.Dao;
+import am.hackathon.dao.model.Perception;
 import org.primefaces.model.chart.*;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Named
+@SessionScoped
 public class TeamChartView implements Serializable {
 
     private LineChartModel lineModel1;
@@ -63,49 +69,13 @@ public class TeamChartView implements Serializable {
     private void createDateModel() {
         dateModel = new LineChartModel();
         LineChartSeries series1 = new LineChartSeries();
+        Dao dao =new Dao(Constant.PROXY);
         series1.setLabel("Team Mood");
-
-        series1.set("2016-11-01", 1);
-        series1.set("2016-11-06", 2);
-        series1.set("2016-11-07", 2);
-        series1.set("2016-11-08", 5);
-        series1.set("2016-11-09", 4);
-        series1.set("2016-11-12", 4);
-        series1.set("2016-11-14", 5);
-        series1.set("2016-11-15", 3);
-        series1.set("2016-11-17", 5);
-        series1.set("2016-11-18", 4);
-        series1.set("2016-11-23", 3);
-        series1.set("2016-11-24", 4);
-        series1.set("2016-11-27", 2);
-        series1.set("2016-11-28", 3);
-
-        series1.set("2016-12-01", 1);
-        series1.set("2016-12-06", 2);
-        series1.set("2016-12-07", 2);
-        series1.set("2016-12-08", 5);
-        series1.set("2016-12-09", 4);
-        series1.set("2016-12-12", 5);
-        series1.set("2016-12-18", 4);
-        series1.set("2016-12-23", 3);
-        series1.set("2016-12-24", 2);
-        series1.set("2016-12-27", 4);
-        series1.set("2016-12-28", 3);
-
-        series1.set("2017-01-01", 1);
-        series1.set("2017-01-06", 2);
-        series1.set("2017-01-07", 5);
-        series1.set("2017-01-08", 4);
-        series1.set("2017-01-09", 4);
-        series1.set("2017-01-12", 5);
-        series1.set("2017-01-18", 4);
-        series1.set("2017-01-23", 4);
-        series1.set("2017-01-24", 2);
-        series1.set("2017-01-27", 2);
-        series1.set("2017-01-28", 3);
-        series1.set("2017-01-29", 4);
-        series1.set("2017-01-30", 1);
-
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        final Map<Date, Collection<Perception>> map = AsSeries.perceptionMap(dao).asMap();
+        for (Map.Entry< Date, Collection< Perception >> entry: map.entrySet()){
+            series1.set(format.format(entry.getKey()),avg(entry.getValue()));
+        }
         dateModel.addSeries(series1);
 
         dateModel.setTitle("Zoom for Details");
@@ -117,6 +87,14 @@ public class TeamChartView implements Serializable {
         axis.setTickFormat("%b %#d, %y");
 
         dateModel.getAxes().put(AxisType.X, axis);
+    }
+
+    private Number avg(Collection<Perception> values) {
+        double vel =0.0;
+        for (Perception value: values){
+            vel+=value.getScore();
+        }
+        return vel/values.size();
     }
 
     private void createLineModels() {
