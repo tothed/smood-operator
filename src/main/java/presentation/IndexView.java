@@ -16,7 +16,7 @@ public class IndexView implements Serializable{
 
     @PostConstruct
     private void init(){
-        question = "Hi Peter! Nice weather today how is your mood?";
+        question = "Hi Peter! How is your mood today?";
         step=0;
         selectedDomains= new ArrayList<>();
     }
@@ -36,9 +36,9 @@ public class IndexView implements Serializable{
     public void save(int step){
         this.step=step+1;
         if (this.step==1){
-            question ="Cause of the mood?";
+            question ="Good to hear that. Why are you feeling so good?";
         } else {
-            question ="How do we know? Link...";
+            question ="...not surprisingly..I know that your mates feels the same way.";
         }
     }
 

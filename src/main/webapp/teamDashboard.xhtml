@@ -11,19 +11,80 @@
     <div class="ui-g">
         <div class="ui-g-12 ui-md-2">
             <div class="ui-g maxH">
-                <div class="ui-g-12 box">Swiss Re</div>
-                <div class="ui-g-12 box">Location</div>
-                <div class="ui-g-12 box">Department</div>
-                <div class="ui-g-12 box boxActive">Team</div>
-                <div class="ui-g-12 box">Personal</div>
+                <div class="ui-g-12">
+                    <div class="logo"/>
+                <nav>
+                    <UL>
+                        <li class="var_nav">
+                            <div class="link_bg"></div>
+                            <div class="link_title">
+                                <div class="icon">
+                                    <i class="icon-mobile-phone icon-2x"></i>
+                                </div>
+                                <a href="teamDashboard.xhtml"><span>Dashboard</span></a>
+                            </div>
+                        </li>
+                        <li class="var_nav">
+                            <div class="link_bg"></div>
+                            <div class="link_title">
+                                <div class="icon">
+                                    <i class="icon-lightbulb icon-2x"></i>
+                                </div>
+                                <a href="#"><span>Suggestions</span></a>
+                            </div>
+                        </li>
+                        <li class="var_nav">
+                            <div class="link_bg"></div>
+                            <div class="link_title">
+                                <div class="icon">
+                                    <i class="icon-wrench icon-2x"></i>
+                                </div>
+                                <a href="#"><span>History</span></a>
+                            </div>
+                        </li>
+                        <li class="var_nav">
+                            <div class="link_bg"></div>
+                            <div class="link_title">
+                                <div class="icon">
+                                    <i class="icon-briefcase icon-2x"></i>
+                                </div>
+                                <a href="future.xhtml"><span>Smoody Future</span></a>
+                            </div>
+                        </li>
+                    </UL>
+                </nav>
+                </div>
             </div>
         </div>
         <div class="ui-g-12 ui-md-10 ui-g-nopad">
             <div class="ui-g-12 ui-g-nopad">
                 <div class="ui-g">
-                    <div class="ui-g-12 ui-md-4"><p:messages /><p:chart type="metergauge" model="#{teamChartView.meterGaugeModel}" style="height:250px;" responsive="true" /></div>
-                    <div class="ui-g-12 ui-md-4"><p:chart type="line" model="#{teamChartView.dateModel}" style="height:250px;" responsive="true" /></div>
-                    <div class="ui-g-12 ui-md-4">Proin efficitur in leo eget ornare. Nam vestibulum neque sed velit sagittis sodales. Sed scelerisque hendrerit magna a hendrerit. Cras tempor sem at justo pharetra convallis. Curabitur vel sodales purus. Vestibulum interdum facilisis nulla imperdiet suscipit. Quisque lectus felis, condimentum eget hendrerit sit amet.</div>
+                    <div class="ui-g-12">
+                        <p:chart type="line" model="#{teamChartView.dateModel}" responsive="true" >
+                            <h:outputScript>
+                                function chartExtender(){
+                                alert('asd');
+                                //this = chart widget instance
+                                //this.cfg = options
+                                this.cfg.axes.xaxis.tickOptions.showGridline = false;
+                                this.cfg.axes.yaxis.tickOptions.showGridline = false;
+                                }
+                            </h:outputScript>
+                        </p:chart>
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-6">
+                        <p:chart type="line" model="#{teamChartView.lineModel2}" responsive="true" />
+                    </div>
+                    <div class="ui-g-6">
+                        <p:tagCloud model="#{teamChartView.tagModel}"/>
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-4"></div>
+                    <div class="ui-g-12 ui-md-4"></div>
+                    <div class="ui-g-12 ui-md-4"></div>
                 </div>
             </div>
         </div>
